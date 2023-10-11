@@ -10,4 +10,5 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.75"
 clap = { version = "4.4.6", features = ["derive"] }
+colour = "0.7.0"
 unicode-width = "0.1.11"

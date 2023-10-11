@@ -1,6 +1,7 @@
 use anyhow::anyhow;
 use clap::Parser;
 use unicode_width::UnicodeWidthStr;
+use colour::*;
 
 const MAX_MESSAGE_LENGTH: usize = 50;
 
@@ -27,7 +28,7 @@ impl SayCommand {
         println!("         | {message} |");
         println!("         +{dashes}+");
         println!("        /");
-        println!("≽(◕ ᴗ ◕)≼");
+        red_ln!("≽(◕ ᴗ ◕)≼");
 
         Ok(())
     }
