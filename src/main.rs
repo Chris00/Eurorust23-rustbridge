@@ -1,3 +1,4 @@
+// cargo run -- say "hellp fregre ùpoj pùhhu hùoi🦦👩‍🔬"
 mod say;
 
 use clap::{Parser, Subcommand};

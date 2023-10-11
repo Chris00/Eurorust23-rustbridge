@@ -1,5 +1,6 @@
 use anyhow::anyhow;
 use clap::Parser;
+use unicode_width::UnicodeWidthStr;
 
 const MAX_MESSAGE_LENGTH: usize = 50;
 
@@ -19,7 +20,9 @@ impl SayCommand {
             return Err(anyhow!("Messages can't be longer than {MAX_MESSAGE_LENGTH} characters!"));
         }
 
-        let dashes = "-".repeat(message.len() + 2);
+        // let dashes = "-".repeat(message.chars().count() + 2);
+        let dashes = "-".repeat(
+            UnicodeWidthStr::width(message.as_str()) + 2);
         println!("         +{dashes}+");
         println!("         | {message} |");
         println!("         +{dashes}+");
